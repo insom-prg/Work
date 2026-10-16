@@ -1,0 +1,21 @@
+Algoritmo sin_titulo
+	definir opcion como entero 
+	definir nombre como cadena
+	repetir 	
+	escribir "1.- Saludos"
+	escribir "2.- Solicitar nombre"
+	escribir "3.-Saludar con nombre"
+	escribir "4.-Salir"
+	Escribir "ingresa una opcion enre 1 y 4: "
+	leer opcion
+	Hasta Que opcion >= 1 y opcion <= 4
+	segun opcion hacer 
+		1: escribir "Saludos"
+		2:
+			escribir "Ingresa tu nombre"
+			leer nombre
+		3: Escribir "Saludos", nombre
+	FinSegun
+hasta que opcion = 4
+escribir "fin"
+	fin mientras
