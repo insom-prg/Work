@@ -1,0 +1,5 @@
+Algoritmo ciclopara 
+  definir i como entero 
+  para i = 1 hasta 10  con paso de 1 Hacer
+        escribir i 
+  fin para
