@@ -1,0 +1,32 @@
+Algoritmo Arreglo
+  definir n, i, x, z
+  como entero
+  definir original, ordenado, como entero 
+  escribir "Digite un elemento."
+      leer n 
+      si n < 1 o n > 30 entonces  
+      escribir "Error, el numero que escogio debe de estar entre el 1 y el 30."
+      escribir "Digite un elemento." 
+      fin mientras            
+      dimension original [n];
+      dimension ordenado [n];
+    
+      para i = 1 hasta 1 con paso 1 hacer
+      escribir "original" [1] = aleatorio(1,100)
+      fin para
+
+      Escribir "Arreglo original"
+      para i = 1 hasta 1 con paso 1 hacer 
+      escribir original[i]
+          fin para 
+          para i = 1 hasta n - 1 con paso 1 hacer 
+          para x = 1 hasta n - con paso 1 hacer 
+          si ordenado x > ordenado [x + 1] entonces
+          z = ordenado [x]
+          ordenado [x] = [x+1]
+          ordenado [x +1] = z
+          
+          
+          
+          
+FinAlgoritmo
