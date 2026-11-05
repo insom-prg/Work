@@ -1,35 +1,37 @@
 Algoritmo Arreglo
   definir n, i, j, aux como entero
-  definir original, ordenado como entero 
+  definir original, ordenado como entero
   escribir "Digite un elemento."
       leer n 
-      si n < 1 o n > 30 entonces  
+      
+      si n < 1 o n > 30 entonces 
       escribir "Error, el numero que escogio debe de estar entre el 1 y el 30."
-      escribir "Digite un elemento." 
-      leer n
-      fin mientras            
-      dimension original[n]
-      dimension ordenado[n]
+      Sino
+      dimension original [n+1]
+      dimension ordenado [n+1]
+                 
+      
     
       para i <- 1 hasta n con paso 1 hacer
-      escribir original[i] <- aleatorio(1,100)
-      fin para
+      original[i] <- aleatorio(1,100)
+      finpara
 
       Escribir "Arreglo original"
-      para i <- 1 hasta n con paso 1 hacer 
-      escribir original[i]
-          fin para 
+      
+      para i <- 1 hasta n con paso 1 Hacer
+      escribir original[i],""
+          finpara 
 
-        para i <-  hasta n con paso 1 hacer 
+        para i <- 1 hasta n con paso 1 hacer 
         ordenado [i] <- original[i]
         FinPara
 
-            para i <- hasta n-1 con paso 1 hacer
-                para j <- hasta n-1 con paso 1 hacer
+            para i <- 1 hasta n-1 con paso 1 hacer
+                para j <- 1 hasta n-i con paso 1 hacer
                 si ordenado[j] > ordenado [j+1] entonces
                 aux <- ordenado[j]
                 ordenado[j] <- ordenado[j+1]
-                ordenado[j+1]<- aux
+                ordenado[j+1] <- aux
                 FinSi
             finpara
         finpara
@@ -37,17 +39,15 @@ Algoritmo Arreglo
         escribir "arreglo ordenado"
         para i<- 1 hasta n con paso 1 hacer
         escribir ordenado[i]
-        fin para
-        fin algoritmo
+        finpara
+        FinSi
         
           
           
-    escribir "Arreglo ordenado"
-    para i<- hasta n con paso 1 hacer 
-    escribir ordenado[1]
-    finpara
-    FinAlgoritmo
+  
+    
           
           
           
 FinAlgoritmo
+
