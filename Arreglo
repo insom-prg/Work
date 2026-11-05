@@ -11,22 +11,26 @@ Algoritmo Arreglo
       dimension original [n];
       dimension ordenado [n];
     
-      para i = 1 hasta 1 con paso 1 hacer
+      para i <- 1 hasta 1 con paso 1 hacer
       escribir "original" [1] = aleatorio(1,100)
       fin para
 
       Escribir "Arreglo original"
-      para i = 1 hasta 1 con paso 1 hacer 
+      para i <- 1 hasta 1 con paso 1 hacer 
       escribir original[i]
           fin para 
-          para i = 1 hasta n - 1 con paso 1 hacer 
-          para x = 1 hasta n - con paso 1 hacer 
+          para i <- 1 hasta n - 1 con paso 1 hacer 
+          para x <- 1 hasta n - con paso 1 hacer 
           si ordenado x > ordenado [x + 1] entonces
-          z = ordenado [x]
+          z <- ordenado [x]
           ordenado [x] = [x+1]
-          ordenado [x +1] = z
+          ordenado [x +1] <- z
+          finsi
+          finpara
+          finpara
           
-          
-          
-          
-FinAlgoritmo
+    escribir "Arreglo ordenado"
+    para i<- hasta n con paso 1 hacer 
+    escribir ordenado[1]
+    finpara
+    FinAlgoritmo
