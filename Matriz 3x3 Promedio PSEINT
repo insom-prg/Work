@@ -1,0 +1,42 @@
+Algoritmo Matriz
+    dimension Matriz [3,3] como entero
+    definir i, j,suma como entero 
+    definir promedio como Real
+    //llenado de la matriz 
+    para i <- 0 hasta 2 con paso 1 hacer 
+        para j <- 0 hasta 2 con paso 1 hacer 
+            Escribir "Renglon: ",i 
+            Escribir "Columna: ",j
+            Leer Matriz [i,j]
+        Finpara
+    FinPara
+    //imprimir matriz
+    Para i <- 0 Hasta 2 Con Paso 1 Hacer
+        Para j <- 0 Hasta 2 Con Paso 1 Hacer
+            Escribir Matriz[i,j]," " sin Saltar
+        FinPara
+        Escribir ""
+    FinPara
+    //calcular el promedio del renglon
+    suma = 0
+    para i<- 0 hasta 2 con paso 1 hacer 
+        suma = suma + Matriz[1,i]
+    FinPara
+    //calcular promedio
+    promedio = suma / 3
+    escribir "El promedio del renglon 1 es: ",promedio
+    //promedio de la columna
+    suma = 0
+    Para i <- 0 Hasta 2 Con Paso 1 Hacer
+        suma = suma + Matriz[i,2]
+    FinPara
+    promedio = suma / 3
+    Escribir "EL promedio de la columna 2: ",promedio
+    //calcular la diagonal 
+    suma = 0 
+    Para i <- 0 Hasta 2 Con Paso 1 Hacer
+        suma = suma + Matriz[i,i]
+    FinPara
+    promedio = suma / 3
+    Escribir "El promedio de la diagonal es: ",promedio
+FinAlgoritmo
