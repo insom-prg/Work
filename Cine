@@ -1,0 +1,91 @@
+Algoritmo Cine
+    definir sala Como Entero
+    definir opcion, k, i, j, c, fila, col Como Entero
+    definir libres, encontrado, filaSel, colSel Como Entero
+    definir ocupados, totalLibres Como Entero
+
+    dimension sala[4,6]
+
+    // Al iniciar, todos los asientos estan libres (0)
+    para i <- 0 hasta 3 con paso 1 hacer
+        para j <- 0 hasta 5 con paso 1 hacer
+            sala[i,j] <- 0
+        finpara
+    finpara
+
+    opcion <- 0
+    mientras opcion <> 3 hacer
+        escribir "1. Ver sala"
+        escribir "2. Reservar"
+        escribir "3. Salir"
+        leer opcion
+
+        si opcion = 1 entonces
+            // Mostrar la sala
+            para i <- 0 hasta 3 con paso 1 hacer
+                para j <- 0 hasta 5 con paso 1 hacer
+                    escribir sin saltar sala[i,j], " "
+                finpara
+                escribir ""
+            finpara
+        finsi
+
+        si opcion = 2 entonces
+            escribir "Cuantos asientos necesita (1 a 6)?"
+            leer k
+            mientras k < 1 o k > 6 hacer
+                escribir "Error, debe ser de 1 a 6."
+                leer k
+            finmientras
+
+            // Buscar el primer bloque de k asientos libres consecutivos en una fila
+            encontrado <- 0
+            filaSel <- 0
+            colSel <- 0
+            fila <- 0
+            mientras fila < 4 y encontrado = 0 hacer
+                col <- 0
+                mientras col <= 6 - k y encontrado = 0 hacer
+                    libres <- 0
+                    para c <- col hasta col + k - 1 con paso 1 hacer
+                        si sala[fila,c] = 0 entonces
+                            libres <- libres + 1
+                        finsi
+                    finpara
+                    si libres = k entonces
+                        encontrado <- 1
+                        filaSel <- fila
+                        colSel <- col
+                    finsi
+                    col <- col + 1
+                finmientras
+                fila <- fila + 1
+            finmientras
+
+            si encontrado = 1 entonces
+                para c <- colSel hasta colSel + k - 1 con paso 1 hacer
+                    sala[filaSel,c] <- 1
+                finpara
+                escribir "Reserva exitosa. Fila: ", filaSel + 1
+                escribir "Asientos del ", colSel + 1, " al ", colSel + k
+            sino
+                escribir "No hay ", k, " asientos libres juntos en una misma fila. Reserva rechazada."
+            finsi
+        finsi
+    finmientras
+
+    // Al salir, contar ocupados y libres
+    ocupados <- 0
+    totalLibres <- 0
+    para i <- 0 hasta 3 con paso 1 hacer
+        para j <- 0 hasta 5 con paso 1 hacer
+            si sala[i,j] = 1 entonces
+                ocupados <- ocupados + 1
+            sino
+                totalLibres <- totalLibres + 1
+            finsi
+        finpara
+    finpara
+    escribir "Asientos ocupados: ", ocupados
+    escribir "Asientos libres: ", totalLibres
+FinAlgoritmo
